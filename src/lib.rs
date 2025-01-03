@@ -1,3 +1,21 @@
+//! # TimeIt
+//! `TimeIt` is very easy to use. To time the execution of a block of code:
+//! ```
+//! use timeit::*;
+//! let time = time!({
+//!     // do some stuff...
+//! });
+//! println!("This operation took {} ms!", time.as_millis());
+//! ```
+//! You can also have `TimeIt` print the time taken to perform a task on its own. To do this:
+//! ```
+//! use timeit::*;
+//! dbg_time!({
+//!     // do some stuff...
+//! });
+//! ```
+//! In this scenario, the time will printed in the most relevant unit, so no need for formatting.
+
 pub use std::time::{Duration, Instant};
 
 /// Prints the execution time of the provided expression.
