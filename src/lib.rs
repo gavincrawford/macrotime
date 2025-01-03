@@ -1,15 +1,15 @@
-//! # TimeIt
-//! `TimeIt` is very easy to use. To time the execution of a block of code:
+//! # MacroTime
+//! `MacroTime` is very easy to use. To time the execution of a block of code:
 //! ```
-//! use timeit::*;
+//! use macrotime::*;
 //! let time = time!({
 //!     // do some stuff...
 //! });
 //! println!("This operation took {} ms!", time.as_millis());
 //! ```
-//! You can also have `TimeIt` print the time taken to perform a task on its own. To do this:
+//! You can also have `MacroTime` print the time taken to perform a task on its own. To do this:
 //! ```
-//! use timeit::*;
+//! use macrotime::*;
 //! dbg_time!({
 //!     // do some stuff...
 //! });

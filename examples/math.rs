@@ -1,4 +1,4 @@
-use timeit::*;
+use macrotime::*;
 
 fn main() {
     println!("Adding 1 million times...");
