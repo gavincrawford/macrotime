@@ -1,12 +1,12 @@
 [package]
 name = "macrotime"
-version = "1.2.0"
+version = "1.2.1"
 edition = "2021"
 license = "MIT"
 description = "A Rust crate for efficient timing."
 homepage = "https://github.com/gavincrawford/macrotime"
 repository = "https://github.com/gavincrawford/macrotime"
 readme = "README.md"
-keywords = ["time", "development-tools"]
+keywords = ["time", "timing", "performance", "benchmarking", "benchmark", "development-tools" ]
 
 [dependencies]
