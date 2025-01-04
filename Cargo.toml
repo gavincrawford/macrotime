@@ -1,6 +1,6 @@
 [package]
 name = "macrotime"
-version = "1.0.3"
+version = "1.0.4"
 edition = "2021"
 license = "MIT"
 description = "A Rust crate for efficient timing."

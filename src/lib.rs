@@ -16,8 +16,6 @@
 //! ```
 //! In this scenario, the time will printed in the most relevant unit, so no need for formatting.
 
-pub use std::time::{Duration, Instant};
-
 /// Prints the execution time of the provided expression.
 #[macro_export]
 macro_rules! dbg_time {
@@ -26,9 +24,9 @@ macro_rules! dbg_time {
         let elapsed = $crate::time!($x);
 
         // log elapsed time
-        if elapsed < $crate::Duration::from_millis(1) {
+        if elapsed < std::time::Duration::from_millis(1) {
             println!("{} us", elapsed.as_nanos());
-        } else if elapsed < $crate::Duration::from_secs(1) {
+        } else if elapsed < std::time::Duration::from_secs(1) {
             println!("{} ms", elapsed.as_millis());
         } else {
             println!("{} s", elapsed.as_secs());
@@ -40,7 +38,7 @@ macro_rules! dbg_time {
 #[macro_export]
 macro_rules! time {
     ($x:expr) => {{
-        let now = $crate::Instant::now();
+        let now = std::time::Instant::now();
         $x();
         now.elapsed()
     }};
