@@ -24,6 +24,7 @@ macro_rules! dbg_time {
         let elapsed = $crate::time!($x);
 
         // log elapsed time
+        print!("{}: ", $id);
         if elapsed < std::time::Duration::from_millis(1) {
             println!("{} us", elapsed.as_nanos());
         } else if elapsed < std::time::Duration::from_secs(1) {
