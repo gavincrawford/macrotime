@@ -10,7 +10,7 @@
 //! You can also have `MacroTime` print the time taken to perform a task on its own. To do this:
 //! ```
 //! use macrotime::*;
-//! dbg_time!({
+//! dbg_time!("context...", {
 //!     // do some stuff...
 //! });
 //! ```
@@ -19,7 +19,7 @@
 /// Prints the execution time of the provided expression.
 #[macro_export]
 macro_rules! dbg_time {
-    ($x:expr) => {
+    ($id:expr, $x:expr) => {
         // time expression
         let elapsed = $crate::time!($x);
 
