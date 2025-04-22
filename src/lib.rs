@@ -16,7 +16,14 @@
 //! ```
 //! In this scenario, the time will printed in the most relevant unit, so no need for formatting.
 
-/// Prints the execution time of the provided expression.
+/// Prints the execution time of the provided expression along with a relevant title/message.
+/// # Example
+/// ```
+/// # use macrotime::*;
+/// dbg_time!("some stuff", {
+///     println!("do some stuff...");
+/// });
+/// ```
 #[macro_export]
 macro_rules! dbg_time {
     ($id:expr, $x:expr) => {
@@ -36,6 +43,13 @@ macro_rules! dbg_time {
 }
 
 /// Returns a `Duration` of the execution time of the provided expression.
+/// # Example
+/// ```
+/// # use macrotime::*;
+/// let duration = time!({
+///     println!("do some stuff...");
+/// });
+/// ```
 #[macro_export]
 macro_rules! time {
     ($x:expr) => {{

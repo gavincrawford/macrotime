@@ -4,4 +4,4 @@ version = 4
 
 [[package]]
 name = "macrotime"
-version = "2.0.1"
+version = "2.0.2"
