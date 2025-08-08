@@ -32,8 +32,10 @@ macro_rules! dbg_time {
 
         // log elapsed time
         print!("{}: ", $id);
-        if elapsed < std::time::Duration::from_millis(1) {
-            println!("{} us", elapsed.as_nanos());
+        if elapsed < std::time::Duration::from_micros(1) {
+            println!("{} ns", elapsed.as_nanos());
+        } else if elapsed < std::time::Duration::from_millis(1) {
+            println!("{} us", elapsed.as_micros());
         } else if elapsed < std::time::Duration::from_secs(1) {
             println!("{} ms", elapsed.as_millis());
         } else {
