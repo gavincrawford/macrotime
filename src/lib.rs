@@ -64,18 +64,20 @@ macro_rules! time {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::hint::black_box;
 
     /// Asserts that two operations of different complexities result in rational computation times.
     #[test]
     fn time() {
+        let mut sum: i32 = black_box(0);
         let a = time!({
-            let mut sum: i32 = 0;
             for i in 0..1_000 {
                 sum = sum.wrapping_add(i);
             }
         });
+
+        let mut sum: i32 = black_box(0);
         let b = time!({
-            let mut sum: i32 = 0;
             for a in 0..1_000 {
                 for b in 0..1_000 {
                     sum = sum.wrapping_add(a * b);
